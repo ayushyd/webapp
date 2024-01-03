@@ -1,0 +1,25 @@
+
+<% if notice %>
+  <p><%= notice %></p>
+<% end %>
+
+<h1>Scraping data</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>URL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @sections.each do |section| %>
+      <tr>
+        <td><%= section.name %></td>
+        <td><%= section.url %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= button_to "Scrape", scraping_create_path, method: :post %>
